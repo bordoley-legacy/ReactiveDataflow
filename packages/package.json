@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm run build-reactive-dataflow-models && npm run build-reactive-dataflow-react",
+    "clean": "npm run clean-reactive-dataflow-models && npm run clean-reactive-dataflow-react",
+    "clean-full": "npm run clean-full-reactive-dataflow-models && npm run clean-full-reactive-dataflow-react",
+
+    "build-reactive-dataflow-models": "cd ./reactive-dataflow-models && npm run build",
+    "clean-reactive-dataflow-models": "cd ./reactive-dataflow-models && npm run clean",
+    "clean-full-reactive-dataflow-models": "cd ./reactive-dataflow-models && npm run clean-full",
+
+    "build-reactive-dataflow-react": "cd ./reactive-dataflow-react && npm run build",
+    "clean-reactive-dataflow-react": "cd ./reactive-dataflow-react && npm run clean",
+    "clean-full-reactive-dataflow-react": "cd ./reactive-dataflow-react && npm run clean-full"
+  }
+}

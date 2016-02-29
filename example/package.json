@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm run rm-reactive-dataflow && npm install && npm run flow && npm run build-web",
+    "build-web": "mkdir -p build && browserify src/index.js -o build/index.js -s projectName -t [ babelify ]",
+
+    "clean": "rm -rf ./build",
+    "clean-full": "npm run clean && rm -rf ./node_modules",
+
+    "rm-reactive-dataflow": "rm -rf ./node-modules/reactive-dataflow-models && rm -rf ./node_modules/reactive-dataflow-react",
+
+    "lint": "npm run eslint -- src/**",
+
+    "babel": "../node_modules/.bin/babel",
+    "eslint": "../node_modules/.bin/eslint",
+    "flow": "../node_modules/.bin/flow"
+  },
+
+  "dependencies": {
+    "immutable": "^3.7.5",
+    "lru": "^1.2.0",
+    "react": "^0.14.7",
+    "reactive-dataflow-models": "file:../packages/reactive-dataflow-models",
+    "reactive-dataflow-react": "file:../packages/reactive-dataflow-react",
+    "react-dom": "^0.14.7",
+    "rx": "^4.0.4",
+    "whatwg-fetch": "^0.10.0"
+  }
+}

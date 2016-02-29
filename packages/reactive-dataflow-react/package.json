@@ -1,0 +1,34 @@
+{
+  "name": "reactive-dataflow-react",
+  "version": "0.0.1",
+  "description": "React component that binds Observable props to a view render function",
+  "author": {
+    "name": "David Bordoley",
+    "email": "bordoley@gmail.com"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/bordoley/ReactiveDataflow.git"
+  },
+  "main": "build/index.js",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "react": "^0.14.7",
+    "shallowequal": "^0.2.2"
+  },
+
+  "scripts": {
+    "build": "npm install && npm run lint && npm run flow && npm run build-babel && npm run build-export-flow",
+    "build-babel": "npm run babel -- src --out-dir build",
+    "build-export-flow": "find src -name \\*js | while read filename; do cp $filename build/${filename##src/}.flow; done",
+
+    "clean": "rm -rf ./build",
+    "clean-full": "npm run clean && rm -rf ./node_modules",
+
+    "lint": "npm run eslint -- src/**",
+
+    "babel": "../../node_modules/.bin/babel",
+    "eslint": "../../node_modules/.bin/eslint",
+    "flow": "../../node_modules/.bin/flow"
+  }
+}

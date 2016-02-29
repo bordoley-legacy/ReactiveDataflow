@@ -1,0 +1,35 @@
+{
+  "private": true,
+
+  "scripts": {
+    "build": "npm install && npm run build-packages && npm run build-example",
+
+    "clean": "npm run clean-packages && npm run clean-example",
+    "clean-full": "rm -rf ./node_modules && npm run clean-full-packages && npm run clean-full-example",
+
+    "build-example": "cd ./example && npm run build",
+    "clean-example": "cd ./example && npm run clean",
+    "clean-full-example": "cd ./example && npm run clean-full",
+
+    "build-packages": "cd ./packages && npm run build",
+    "clean-packages": "cd ./packages && npm run clean",
+    "clean-full-packages": "cd ./packages && npm run clean-full"
+  },
+
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-eslint": "^5.0.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-plugin-transform-strict-mode": "^6.5.2",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "eslint": "^2.2.0",
+    "eslint-plugin-promise": "^1.0.8",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-plugin-react": "^4.1.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "flow-bin": "0.22.0"
+  }
+}
